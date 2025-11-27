@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registro de Usuario</title>
+    <script>
+      function validatenumber() {
+        var number = document.getElementById("number").value;
+
+        // Permite espacio opcional luego de +591
+        var regex = /^\+591 ?[67]\d{0,7}$/;
+
+        if (regex.test(number)) {
+          alert("Número válido Boliviano: " + number);
+        } else {
+          alert("El número debe ser de Bolivia. Formato: +591 seguido de 6 o 7 y máximo 8 dígitos. Ej: +591 69967623");
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Registro de Usuario</h1>
+    <form>
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" id="username" name="username" required />
+      <br />
+
+      <label for="number">Teléfono Bolivia:</label>
+      <input type="text" id="number" name="number" required />
+      <br />
+
+      <input type="submit" value="Registrarse" onclick="validatenumber(); return false;" />
+    </form>
+  </body>
+</html>
